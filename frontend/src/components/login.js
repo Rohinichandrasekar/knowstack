@@ -14,11 +14,11 @@ const gradientBG = keyframes`
   100% { background-position: 0% 50%; }
 `;
 
-const pulse = keyframes`
-  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
-`;
+// const pulse = keyframes`
+//   0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+//   70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+//   100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+// `;
 
 // Styled Components
 const Container = styled.div`

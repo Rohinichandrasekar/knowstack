@@ -15,11 +15,11 @@ const pulse = keyframes`
   100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
 `;
 
-const gradientBG = keyframes`
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-`;
+// const gradientBG = keyframes`
+//   0% { background-position: 0% 50%; }
+//   50% { background-position: 100% 50%; }
+//   100% { background-position: 0% 50%; }
+// `;
 
 // Styled Components
 const Container = styled.div`
