@@ -32,13 +32,17 @@ jobs:
            python -m venv venv
            source venv/bin/activate
            
-           
       - name: Install dependencies
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install --upgrade pip  # Optional: Prevents "new release" notice
-          pip install -r flask/requirements.txt  # Ensure file is correctly formatted
+          pip install --upgrade pip  # Avoids version warning
+          if [ -f "flask/requirements.txt" ]; then
+             pip install -r flask/requirements.txt
+          else
+           echo "::error::flask/requirements.txt not found!"
+          exit 1
+           fi
            
    
    
