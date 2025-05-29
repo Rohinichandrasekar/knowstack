@@ -32,18 +32,18 @@ jobs:
            python -m venv venv
            source venv/bin/activate
            
-      - name: Install dependencies
+      - name: Debug - Verify requirements.txt
         run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install --upgrade pip  # Avoids version warning
-          if [ -f "flask/requirements.txt" ]; then
-             pip install -r flask/requirements.txt
-          else
-           echo "::error::flask/requirements.txt not found!"
-          exit 1
-           fi
-           
+         echo "Current directory: $(pwd)"
+         echo "Looking for requirements.txt..."
+         find . -name "requirements.txt" -type f
+         if [ -f "flask/requirements.txt" ]; then
+          echo "flask/requirements.txt exists"
+          ls -la flask/requirements.txt
+          cat flask/requirements.txt
+         else
+          echo "flask/requirements.txt does NOT exist"
+          fi
    
    
 
