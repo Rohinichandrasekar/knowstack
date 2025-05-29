@@ -1,3 +1,4 @@
+pip install -r requirements.txt
 absl-py==2.2.2
 accelerate==0.34.2
 addict==2.4.0
