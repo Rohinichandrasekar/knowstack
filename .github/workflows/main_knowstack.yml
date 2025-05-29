@@ -29,18 +29,8 @@ jobs:
           python -m venv venv
           source venv/bin/activate
       
-      - name: DEBUG - Show Everything
-        run: |
-         echo "=== Current Directory Structure ==="
-         ls -R
-         echo "=== Python Version ==="
-         python --version
-         echo "=== Pip Version ==="
-         pip --version
-         echo "=== Virtualenv Check ==="
-         python -m venv --help || echo "Virtualenv not available"
-         echo "=== Attempting to Find requirements.txt ==="
-         find . -name "requirements.txt" -type f -exec echo "Found: {}" \; -exec cat {} \;
+      - name: Install dependencies
+        run: pip install -r requirements.txt
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -78,9 +68,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_711CD888D62640EA83927CFD20A7720C }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B393D203B0E54AB8A30A5EC4DB8E0323 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F802289512FF444BA83186E677B9B5BA }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A2D67F94B21B4309A0DA56228D850FB9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D83DD17FD2704CEB83FE53C8AEE58FA3 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_BCE61F1B50124115941874594ADD8554 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
