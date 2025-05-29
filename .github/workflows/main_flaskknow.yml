@@ -32,18 +32,18 @@ jobs:
            python -m venv venv
            source venv/bin/activate
            
-      - name: Debug - Verify requirements.txt
+      - name: DEBUG - Show Everything
         run: |
-         echo "Current directory: $(pwd)"
-         echo "Looking for requirements.txt..."
-         find . -name "requirements.txt" -type f
-         if [ -f "flask/requirements.txt" ]; then
-          echo "flask/requirements.txt exists"
-          ls -la flask/requirements.txt
-          cat flask/requirements.txt
-         else
-          echo "flask/requirements.txt does NOT exist"
-          fi
+         echo "=== Current Directory Structure ==="
+         ls -R
+         echo "=== Python Version ==="
+         python --version
+         echo "=== Pip Version ==="
+         pip --version
+         echo "=== Virtualenv Check ==="
+         python -m venv --help || echo "Virtualenv not available"
+         echo "=== Attempting to Find requirements.txt ==="
+         find . -name "requirements.txt" -type f -exec echo "Found: {}" \; -exec cat {} \;
    
    
 
