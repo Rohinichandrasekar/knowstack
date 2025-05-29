@@ -29,10 +29,9 @@ jobs:
           python -m venv venv
           source venv/bin/activate
       
-      - name: Change to Flask directory
-        working-directory: ./flask
-        run: |
-          pip install -r requirements.txt
+      - name: Install Python dependencies
+        run: pip install -r flask/requirements.txt
+
 
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
