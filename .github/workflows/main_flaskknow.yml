@@ -27,19 +27,12 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: List files for debugging
-        run: ls -R
-
-
-      - name: Create and start virtual environment
+      - name: Create and use virtual environment
         run: |
-          python -m venv venv
-          source venv/bin/activate
-
-      
-      
-      - name: Install Python dependencies
-        run: pip install -r flask/requirements.txt
+           python -m venv venv
+           source venv/bin/activate
+           pip install -r flask/requirements.txt
+   
 
 
         
